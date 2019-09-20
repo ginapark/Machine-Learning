@@ -5,6 +5,9 @@ import os
 ALPHA = 0.05
 V = 200000
 
+"""
+Counts the number of words in each email and returns a dictionary of word counts as well as the total count of words.
+"""
 def count_words(directory):
     words = {}
     count = 0
@@ -18,6 +21,13 @@ def count_words(directory):
                 words[line] += 1
             count += 1
     return words, count
+
+"""
+Runs the naive bayes model by adding to the total probability of ham and spam, respectively.
+Returns a dictionary containing a mapping of the file name to the model classification and the truth.
+Also returns the accuracy of the model.
+
+"""
 
 def run_model(directory, spam, prob_spam, prob_unseen_spam, ham, prob_ham, 
                 prob_unseen_ham, truth_table):
@@ -63,6 +73,10 @@ def run_model(directory, spam, prob_spam, prob_unseen_spam, ham, prob_ham,
 
     return classification, 1 - (differences/total_email)
 
+"""
+Extracts the names of the files that should be "Spam". 
+Returns a set with the files that should be classified as "Spam."
+"""
 def populate_truth(directory):
     truth = set()
 
@@ -73,6 +87,10 @@ def populate_truth(directory):
             truth.add(line)
     return truth
 
+"""
+Calculates the probabilities necessary to implement the Naive Bayes classifier.
+Adds the P(word|class) to the dictionary of words and returns P(class) and P(unseen_word) 
+"""
 def calculate_probabilities(total_words, total_class, words, is_ham=False):
     for word in words:
         curr_count = words[word] + ALPHA
@@ -85,6 +103,10 @@ def calculate_probabilities(total_words, total_class, words, is_ham=False):
 
     return prob_class, prob_unseen_class
 
+"""
+After the classifier is run, obtains the metrics of precision, recall, and f-score as well as the confusion matrix.
+Returns confusion matrix and metrics as two separate dictionaries.
+"""
 def get_metrics(results):
     "Assuming Ham is positive and Spam is negative"
     positive = "Ham"
@@ -117,7 +139,6 @@ def get_metrics(results):
   
     return confusion_matrix, metrics
 
-
 def main():
     ham = "*/ginapark/hw1/data/ham/*"
     spam = "*/ginapark/hw1/data/spam/*"
@@ -143,3 +164,4 @@ def main():
 
 
 main()
+
