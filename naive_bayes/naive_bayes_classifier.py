@@ -127,23 +127,19 @@ def get_metrics(results):
                 confusion_matrix["FP"] += 1
     metrics = {}
 
-    metrics["precision_ham"] = confusion_matrix["TP"] / (confusion_matrix["TP"] + confusion_matrix["FP"])
-    metrics["precision_spam"] = confusion_matrix["TN"] / (confusion_matrix["TN"] + confusion_matrix["FN"])
-    metrics["recall_ham"] = confusion_matrix["TP"] / (confusion_matrix["TP"] + confusion_matrix["FN"])
-    metrics["recall_spam"] = confusion_matrix["TN"] / (confusion_matrix["TN"] + confusion_matrix["FP"])
+    metrics["precision"] = confusion_matrix["TP"] / (confusion_matrix["TP"] + confusion_matrix["FP"])
+    metrics["recall"] = confusion_matrix["TP"] / (confusion_matrix["TP"] + confusion_matrix["FN"])
 
-    metrics["f_score_ham"] = \
-        (2 * metrics["recall_ham"] * metrics["precision_ham"]) / (metrics["precision_ham"] + metrics["recall_ham"])
-    metrics["f_score_spam"] = \
-        (2 * metrics["recall_spam"] * metrics["precision_spam"]) / (metrics["precision_spam"] + metrics["recall_spam"])
+    metrics["f_score"] = \
+        (2 * metrics["recall"] * metrics["precision"]) / (metrics["precision"] + metrics["recall"])
   
     return confusion_matrix, metrics
 
 def main():
-    ham = "*/ginapark/hw1/data/ham/*"
-    spam = "*/ginapark/hw1/data/spam/*"
-    test = "*/ginapark/hw1/data/test/*"
-    truth_file = "*/ginapark/hw1/data/truthfile*"
+    ham = "*/data/ham/*"
+    spam = "*/data/spam/*"
+    test = "*/data/test/*"
+    truth_file = "*/data/truthfile*"
 
     dict_ham, total_ham = count_words(ham)
     dict_spam, total_spam = count_words(spam)
