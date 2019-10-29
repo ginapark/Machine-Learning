@@ -1,4 +1,4 @@
-# Assignments from Machine Learning
+# Machine Learning Projects
 
 1. <b> [Ham vs Spam Email Classification:](https://github.com/ginapark/Machine-Learning/blob/master/naive_bayes/naive_bayes_classifier.pdf) <br></b>
 &nbsp; &nbsp;Naive Baysian Classifier <br>
