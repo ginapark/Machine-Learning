@@ -12,3 +12,9 @@
 4. <b> [Will it Rain Tomorrow in Australia?:](https://github.com/ginapark/Machine-Learning/blob/master/rain_australia/predicting_rain.pdf)</b><br>
 &nbsp; &nbsp; Logistic Regression, Gradient Boosted Classification, Decision Trees <br>
 &nbsp; &nbsp;[Jupyter Notebook](https://github.com/ginapark/Machine-Learning/blob/master/rain_australia/predicting_rain.ipynb)
+5. <b> [Cifar 10 Dataset Image Classification:](https://github.com/ginapark/Machine-Learning/blob/master/cifar_10/Cifar_10_Final_Project.pdf)</b><br>
+&nbsp; &nbsp;Computer Vision, Image Classification, Convolutional Neural Networks, TensorFlow, Keras<br>
+&nbsp; &nbsp;[Jupyter Notebook](https://github.com/ginapark/Machine-Learning/blob/master/cifar_10/Cifar_10_Final_Project.ipynb)<br><br>
+&nbsp; &nbsp;The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. <br>
+&nbsp; &nbsp;This project built a model that classifies the images as 'airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', or 'truck'. <br>
+
